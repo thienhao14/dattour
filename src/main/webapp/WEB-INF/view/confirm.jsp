@@ -5,29 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Booking Tour</title>
+<title>Confirm Tour</title>
 </head>
 <body>
 
-	<form action="/tour/confirm" th:object="${customer}" method="post">
+	<form>
 		<h2>Thông tin khách hàng</h2>
 
 		<table>
 			<tr>
 				<td>Họ tên</td>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="name" value="${customer.name}" readonly></td>
 			</tr>
 			<tr>
 				<td>Địa chỉ</td>
-				<td><input type="text" name="address"></td>
+				<td><input type="text" name="address" value="${customer.address}" readonly></td>
 			</tr>
 			<tr>
 				<td>Email</td>
-				<td><input type="text" name="email"></td>
+				<td><input type="text" name="email" value="${customer.email}" readonly></td>
 			</tr>
 			<tr>
 				<td>Điện thoại</td>
-				<td><input type="text" name="phone"></td>
+				<td><input type="text" name="phone" value="${customer.phone}" readonly></td>
 			</tr>
 		</table>
 
@@ -47,10 +47,7 @@
 			</tr>
 
 		</table>
-		<input type="submit" value="Gửi">		
-		<a href="/tour/listTours">
-			<input type="button" value="Hủy">
-		</a>
+		
 	</form>
 </body>
 </html>

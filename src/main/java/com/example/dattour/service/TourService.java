@@ -2,22 +2,43 @@ package com.example.dattour.service;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.dattour.dao.BookingDAO;
+import com.example.dattour.dao.CustomerDAO;
+import com.example.dattour.dao.TourDAO;
+import com.example.dattour.model.Booking;
+import com.example.dattour.model.Customer;
 import com.example.dattour.model.Tour;
 
 @Service
 public class TourService {
+	
+	@Autowired
+	private TourDAO tourDAO;
+	
+	@Autowired
+	private CustomerDAO customerDAO;
+	
+	@Autowired
+	private BookingDAO bookingDAO;
+	
+	
 	public ArrayList<Tour> getAllTours(){
-		ArrayList<Tour> tours = new ArrayList<>();
-		tours.add(new Tour(1, "Phú Quốc", "3 ngày 2 đêm", "máy bay", "hằng ngày", 1595000));
-		tours.add(new Tour(2, "Nha Trang", "2 ngày 2 đêm", "tàu lửa", "tối thứ 6 và CN", 1540000));
-		return tours;
+		return tourDAO.getAllTours();
 	}
 
 	public Tour getTour(long id) {
-		Tour tourObj = new Tour();
-		tourObj.getId();
-		return tourObj;
+		return tourDAO.getTour(id);
 	}
+	
+	public Customer saveCustomer(Customer customer) {
+		return customerDAO.saveCustomer(customer);
+	}
+	
+	public Booking saveBooking(Booking booking) {
+		return bookingDAO.saveBooking(booking);
+	}
+	
 }

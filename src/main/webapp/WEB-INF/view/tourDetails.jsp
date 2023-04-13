@@ -9,8 +9,17 @@
 </head>
 <body>
 	<h1>Chương trình chi tiết</h1>
-	<p>
+	<h3>
 		${tour.description}
+	</h3>
+	<p>
+		Số ngày: ${tour.days}
+	</p>
+	<p>
+		Phương tiện: ${tour.transportation}
+	</p>
+	<p>
+		Lịch khởi hành: ${tour.departureSchedule}
 	</p>
 </body>
 </html>

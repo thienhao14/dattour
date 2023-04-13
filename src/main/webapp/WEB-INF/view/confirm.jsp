@@ -35,15 +35,15 @@
 		<table>
 			<tr>
 				<td>Ngày khởi hành</td>
-				<td><input type="text"></td>
+				<td><input type="text" <%-- name="departureDate" value="${booking.departureDate}" --%>></td>
 			</tr>
 			<tr>
 				<td>Số người lớn</td>
-				<td><input type="text"></td>
+				<td><input type="text" <%-- name="noAdults" value="${booking.noAdults}" --%>></td>
 			</tr>
 			<tr>
 				<td>Số trẻ em</td>
-				<td><input type="text"></td>
+				<td><input type="text" <%-- name="noChildren" value="${booking.noChildren}" --%>></td>
 			</tr>
 
 		</table>

@@ -14,6 +14,13 @@ public class Booking {
 		super();
 	}
 
+	public Booking(Date departureDate, int noAdults, int noChildren) {
+		super();
+		this.departureDate = departureDate;
+		this.noAdults = noAdults;
+		this.noChildren = noChildren;
+	}
+
 	public Booking(long id, Customer customer, Date departureDate, int noAdults, int noChildren, Tour tour) {
 		super();
 		this.id = id;

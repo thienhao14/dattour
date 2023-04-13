@@ -15,6 +15,10 @@ public class TourDAO {
 		tours = new ArrayList<>();
 		tours.add(new Tour(1, "Phú Quốc", "3 ngày 2 đêm", "máy bay", "hằng ngày", 1595000));
 		tours.add(new Tour(2, "Nha Trang", "2 ngày 2 đêm", "tàu lửa", "tối thứ 6 và CN", 1540000));
+		tours.add(new Tour(3, "Côn Đảo", "3 ngày 2 đêm", "máy bay", "hằng ngày", 1345000));
+		tours.add(new Tour(4, "Phan Thiết", "2 ngày 1 đêm", "tàu lửa", "thứ 7 mỗi tuần", 1250000));
+		tours.add(new Tour(5, "Đà Lạt", "2 ngày 2 đêm", "xe khách", "thứ 7 mỗi tuần", 1320000));
+		tours.add(new Tour(6, "Nha Trang", "4 ngày 3 đêm", "tàu lửa", "định kỳ", 1790000));
 		return tours;
 	}
 

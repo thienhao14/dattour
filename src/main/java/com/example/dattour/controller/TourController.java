@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.dattour.model.Booking;
 import com.example.dattour.model.Customer;
+import com.example.dattour.model.ShowBooking;
 import com.example.dattour.model.Tour;
+import com.example.dattour.service.BookingService;
 import com.example.dattour.service.CustomerService;
 import com.example.dattour.service.TourService;
 
@@ -20,9 +23,12 @@ import com.example.dattour.service.TourService;
 public class TourController {
 	@Autowired
 	private TourService tourService;
-	
+
 	@Autowired
 	private CustomerService customerService;
+
+	@Autowired
+	private BookingService bookingService;
 
 	@GetMapping("")
 	public ArrayList<Tour> getAllTours() {
@@ -30,6 +36,14 @@ public class TourController {
 		return tourService.getAllTours();
 	}
 
+	/*
+	 * 
+	 * Chọn DattourApplication -> RUN Java Application
+	 * 
+	 * Truy cập http://localhost:8080/tour/listTours
+	 *
+	 *
+	 */
 	@GetMapping("/listTours")
 	public String list(Model model) {
 		model.addAttribute("listTours", tourService.getAllTours());
@@ -45,17 +59,17 @@ public class TourController {
 		}
 		return "tourDetails";
 	}
-	
+
 	@GetMapping("/bookingTour")
 	public String bookingTour() {
 		return "bookingTour";
 	}
 
 	@PostMapping("/confirm")
-	public String confirm(Customer customer, Model model) {
+	public String confirm(Customer customer, Booking booking, Model model) {
 		Customer c = customerService.saveCustomer(customer);
-		model.addAttribute("customer",c);
+		model.addAttribute("customer", c);
 		return "confirm";
 	}
-	
+
 }
